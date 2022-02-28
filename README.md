@@ -26,6 +26,10 @@ Commands are formed on a key which will be included at the start of the UDP pack
 
 Parameters are expressed in the form `{{name}}` and relate directly to the schemas. The schemas a `RegExp` expressions containing named capturing groups that will be substituted into the commands. As shown, the command `demo-with-params` will take a lower case alphabetic string and substitute it into the command to form a final output. 
 
+## Packets
+
+Packets are in the format `command:params`. Parameters are defined by the schema regex. To issue a command with no parameters you send `command:`. The colon is always required. For example to execute the two commands shown you would issue packets with `demo:` and `demo:a`. 
+
 ## Logging
 
 All commands including `stdout` will be logged to the result. 
