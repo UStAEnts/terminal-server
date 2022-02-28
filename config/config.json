@@ -1,0 +1,13 @@
+{
+  "bind": "0.0.0.0",
+  "port": 8889,
+  "commands": {
+    "one": {
+      "execute": "echo {{a}}",
+      "schema": "(?<a>[a-z]+)"
+    },
+    "two": {
+      "execute": "echo 2"
+    }
+  }
+}
