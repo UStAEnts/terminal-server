@@ -30,6 +30,10 @@ Parameters are expressed in the form `{{name}}` and relate directly to the schem
 
 Packets are in the format `command:params`. Parameters are defined by the schema regex. To issue a command with no parameters you send `command:`. The colon is always required. For example to execute the two commands shown you would issue packets with `demo:` and `demo:a`. 
 
+## Security
+
+Security is not the main priority of this server so not much effort has been put in to safely escaping and santising input. The onus of avoiding shell injection and other vulnerabilities are left us to the person designing the config to ensure that only suitable characters are whitelisted and it is rigid enough to not support this kind of injection. For example, in the demo config provided above, only a-z characters are allowed to ensure that no shell dividers can be entered. Moreover, hypothetically due to how parameters are passed to `execa`, joined commands should not be possible but I do not have enough confidence in the library or the command splitting library to be able to say this for certain. If you identify any security vulnerabilities or think of any potential mitigations, please open an issue and report it for fixing!
+
 ## Logging
 
 All commands including `stdout` will be logged to the result. 
